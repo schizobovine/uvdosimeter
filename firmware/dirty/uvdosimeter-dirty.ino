@@ -13,13 +13,9 @@
 #include <avr/pgmspace.h>
 
 #include <Arduino.h>
-#include <SPI.h>
 #include <Wire.h>
 #include <MicroView.h>
 #include <Adafruit_SI1145.h>
-#include <Adafruit_BLE.h>
-#include <Adafruit_BluefruitLE_UART.h>
-#include <SoftwareSerial.h>
 
 const int BLUART_RX  = 5;
 const int BLUART_TX  = 3;
@@ -28,15 +24,6 @@ const int BLUART_RTS = 6;
 const int BLUART_MOD = -1;
 
 Adafruit_SI1145 si1145 = Adafruit_SI1145();
-
-SoftwareSerial bluart = SoftwareSerial(BLUART_TX, BLUART_RX);
-
-Adafruit_BluefruitLE_UART ble = Adafruit_BluefruitLE_UART(
-  bluart,
-  BLUART_MOD,
-  BLUART_CTS,
-  BLUART_RTS
-);
 
 float visible;
 float ir;
@@ -55,33 +42,12 @@ void setup() {
   while (!si1145.begin()) {
     uView.clear(PAGE);
     uView.setCursor(0, 0);
-    uView.println("Could not find Si1145!");
+    uView.println("Could not find UV Sensor!");
     uView.display();
     delay(5000);
   }
-
-  // Initialize Bluetooth module
-  while (!ble.begin()) {
-    uView.clear(PAGE);
-    uView.setCursor(0, 0);
-    uView.println("Could not find BlUART!");
-    uView.display();
-    delay(5000);
-  }
-
-  // Initialize Bluetooth module
-  while (!ble.factoryReset()) {
-    uView.clear(PAGE);
-    uView.setCursor(0, 0);
-    uView.println("Could not find reset BluART!");
-    uView.display();
-    delay(5000);
-  }
-
-  // Wait for pairing
-  //while (!ble.isConnected()) {
-  //  delay(1000);
-  //}
+  
+  delay(500);
 
 }
 
@@ -105,17 +71,6 @@ void printDisplay() {
 
 }
 
-void printBluetooth() {
-
-  PGM_P FMT = PSTR("%#6.1f,%#6.1f,%#6.1f");
-  char buff[64];
-  snprintf_P(buff, sizeof(buff), FMT, visible, ir, uv);
-  buff[sizeof(buff) - 1] = '\0';
-
-  ble.println(buff);
-
-}
-
 void loop() {
   
   visible = si1145.readVisible();
@@ -123,7 +78,6 @@ void loop() {
   uv = si1145.readUV();
 
   printDisplay();
-  //printBluetooth();
 
   delay(1000);
 
