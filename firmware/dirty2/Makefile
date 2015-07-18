@@ -1,4 +1,4 @@
-ARDUINO_LIBS      := Wire MicroView Adafruit_SI1145
+ARDUINO_LIBS      := Wire MicroView Adafruit_SI1145 Adafruit_SD RTClib RTClib/DS3231 Time Timezone SPI
 ARDUINO_PORT      := /dev/ttyUSB0
 USER_LIB_PATH     := $(realpath ./lib)
 BOARD_TAG         := uno
