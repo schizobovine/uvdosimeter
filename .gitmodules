@@ -1,0 +1,12 @@
+[submodule "firmware/feather/lib/Arduino-Makefile"]
+	path = firmware/feather/lib/Arduino-Makefile
+	url = git@github.com:sudar/Arduino-Makefile.git
+[submodule "firmware/feather/lib/Adafruit_SI1145"]
+	path = firmware/feather/lib/Adafruit_SI1145
+	url = git@github.com:adafruit/Adafruit_SI1145_Library.git
+[submodule "firmware/feather/lib/Adafruit_SSD1306"]
+	path = firmware/feather/lib/Adafruit_SSD1306
+	url = git@github.com:schizobovine/Adafruit_SSD1306.git
+[submodule "firmware/feather/lib/Adafruit_GFX"]
+	path = firmware/feather/lib/Adafruit_GFX
+	url = git@github.com:adafruit/Adafruit-GFX-Library.git
