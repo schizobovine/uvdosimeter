@@ -1,5 +1,7 @@
 ARDUINO_DIR       = $(realpath $(HOME)/arduino/arduino-current)
-ARDUINO_LIBS      := SPI Wire Adafruit_GFX Adafruit_SSD1306 Adafruit_SI1145
+ARDUINO_LIBS      := SPI Wire \
+	Adafruit_GFX Adafruit_SSD1306 Adafruit_SI1145 \
+	Bounce2 EnableInterrupt
 
 ARDUINO_PORT      := /dev/ttyACM0
 USER_LIB_PATH     := $(realpath ./lib)
