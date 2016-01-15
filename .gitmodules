@@ -10,3 +10,9 @@
 [submodule "firmware/feather/lib/Adafruit_GFX"]
 	path = firmware/feather/lib/Adafruit_GFX
 	url = git@github.com:adafruit/Adafruit-GFX-Library.git
+[submodule "firmware/feather/lib/Bounce2"]
+	path = firmware/feather/lib/Bounce2
+	url = git@github.com:schizobovine/Bounce2.git
+[submodule "firmware/feather/lib/EnableInterrupt"]
+	path = firmware/feather/lib/EnableInterrupt
+	url = git@github.com:GreyGnome/EnableInterrupt.git
