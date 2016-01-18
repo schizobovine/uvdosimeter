@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.5" unitdist="mm" unit="mm" style="lines" multiple="2" display="yes" altdistance="1" altunitdist="mil" altunit="mil"/>
+<grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="5" display="yes" altdistance="1" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -162,21 +162,20 @@
 </layers>
 <board>
 <plain>
-<wire x1="0" y1="18.73" x2="0" y2="1.27" width="0" layer="20"/>
-<wire x1="0" y1="1.27" x2="1.27" y2="0" width="0" layer="20" curve="90"/>
-<wire x1="1.27" y1="0" x2="18.73" y2="0" width="0" layer="20"/>
-<wire x1="18.73" y1="0" x2="20" y2="1.27" width="0" layer="20" curve="90"/>
-<wire x1="20" y1="1.27" x2="20" y2="18.73" width="0" layer="20"/>
-<wire x1="20" y1="18.73" x2="18.73" y2="20" width="0" layer="20" curve="90"/>
-<wire x1="18.73" y1="20" x2="1.27" y2="20" width="0" layer="20"/>
-<wire x1="1.27" y1="20" x2="0" y2="18.73" width="0" layer="20" curve="90"/>
-<hole x="1.5" y="18.5" drill="1.5"/>
-<hole x="18.5" y="18.5" drill="1.5"/>
-<text x="10" y="4.7" size="0.6096" layer="22" font="vector" ratio="12" rot="SMR180" align="bottom-center">TinyDuino adapter for
-Adafruit Si1145
-UV i2c Sensor</text>
-<text x="10" y="12.3" size="0.6096" layer="22" font="vector" ratio="12" rot="SMR180" align="bottom-center">Sensor This Side
-(face up, in case that wasn't obvious)</text>
+<wire x1="1" y1="0" x2="19" y2="0" width="0" layer="20"/>
+<wire x1="19" y1="0" x2="20" y2="1" width="0" layer="20" curve="90"/>
+<wire x1="20" y1="1" x2="20" y2="7.6" width="0" layer="20"/>
+<wire x1="20" y1="7.6" x2="19" y2="8.6" width="0" layer="20" curve="90"/>
+<wire x1="19" y1="8.6" x2="1" y2="8.6" width="0" layer="20"/>
+<wire x1="1" y1="8.6" x2="0" y2="7.6" width="0" layer="20" curve="90"/>
+<wire x1="0" y1="7.6" x2="0" y2="1" width="0" layer="20"/>
+<wire x1="0" y1="1" x2="1" y2="0" width="0" layer="20" curve="90"/>
+<hole x="1.5" y="1.5" drill="1.5"/>
+<hole x="18.5" y="1.5" drill="1.5"/>
+<text x="2" y="4.5" size="1" layer="1" font="vector" ratio="16" rot="R270" align="center">&gt;VERSION</text>
+<text x="2" y="4.5" size="1" layer="21" font="vector" ratio="16" rot="R270" align="center">&gt;VERSION</text>
+<text x="10" y="7.8" size="0.8" layer="21" font="vector" ratio="12" align="center">Adafruit Si1145</text>
+<text x="10.1" y="1" size="0.8" layer="21" font="vector" ratio="12" align="center">to Tinyduino</text>
 </plain>
 <libraries>
 <library name="A_butts">
@@ -293,54 +292,30 @@ UV i2c Sensor</text>
 <rectangle x1="3.6378" y1="-2.5034" x2="3.8578" y2="-1.2034" layer="31"/>
 <text x="0" y="0" size="0.635" layer="25" font="vector" ratio="12" align="center">&gt;NAME</text>
 </package>
-<package name="PAD-JUMPER-2-NO_YES_SILK">
-<description>Small solder jumper with no paste layer so it will open after reflow.</description>
-<wire x1="0.8" y1="-1" x2="-0.8" y2="-1" width="0.2032" layer="21"/>
-<wire x1="0.8" y1="1" x2="1" y2="0.7" width="0.2032" layer="21" curve="-90"/>
-<wire x1="-1" y1="0.7" x2="-0.8" y2="1" width="0.2032" layer="21" curve="-90"/>
-<wire x1="-1" y1="-0.7" x2="-0.8" y2="-1" width="0.2032" layer="21" curve="90"/>
-<wire x1="0.8" y1="-1" x2="1" y2="-0.7" width="0.2032" layer="21" curve="90"/>
-<wire x1="-0.8" y1="1" x2="0.8" y2="1" width="0.2032" layer="21"/>
-<smd name="1" x="-0.45" y="0" dx="0.635" dy="1.27" layer="1" cream="no"/>
-<smd name="2" x="0.45" y="0" dx="0.635" dy="1.27" layer="1" cream="no"/>
-<text x="-0.908" y="1.27" size="0.4064" layer="25">&gt;NAME</text>
-<text x="-0.908" y="-1.651" size="0.4064" layer="27">&gt;VALUE</text>
-</package>
-<package name="ADAFRUIT-SI1145-BREAKOUT">
-<wire x1="10.16" y1="6.35" x2="10.16" y2="-6.35" width="0.1524" layer="21"/>
-<wire x1="10.16" y1="-6.35" x2="7.62" y2="-8.89" width="0.1524" layer="21" curve="-90"/>
-<wire x1="7.62" y1="-8.89" x2="-7.62" y2="-8.89" width="0.1524" layer="21"/>
-<wire x1="-7.62" y1="-8.89" x2="-10.16" y2="-6.35" width="0.1524" layer="21" curve="-90"/>
-<wire x1="-10.16" y1="-6.35" x2="-10.16" y2="6.35" width="0.1524" layer="21"/>
-<wire x1="-7.62" y1="8.89" x2="7.62" y2="8.89" width="0.1524" layer="21"/>
-<wire x1="7.62" y1="8.89" x2="10.16" y2="6.35" width="0.1524" layer="21" curve="-90"/>
-<wire x1="-10.16" y1="6.35" x2="-7.62" y2="8.89" width="0.1524" layer="21" curve="-90"/>
-<hole x="-7.62" y="6.35" drill="2"/>
-<hole x="7.62" y="6.35" drill="2"/>
-<pad name="VIN" x="-7.62" y="-6.35" drill="1.3" diameter="1.9304" shape="square"/>
-<pad name="GND" x="-5.08" y="-6.35" drill="1.3" diameter="1.9304"/>
-<pad name="3V3_OUT" x="-2.54" y="-6.35" drill="1.3" diameter="1.9304"/>
-<pad name="IRQ" x="0" y="-6.35" drill="1.3" diameter="1.9304"/>
-<pad name="LED" x="2.54" y="-6.35" drill="1.3" diameter="1.9304"/>
-<pad name="SCL" x="5.08" y="-6.35" drill="1.3" diameter="1.9304"/>
-<pad name="SDA" x="7.62" y="-6.35" drill="1.3" diameter="1.9304"/>
-<rectangle x1="-0.254" y1="-1.524" x2="0.762" y2="0.508" layer="21"/>
-<wire x1="0.762" y1="-1.27" x2="1.27" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="0.762" y1="-0.762" x2="1.27" y2="-0.762" width="0.1524" layer="21"/>
-<wire x1="0.762" y1="-0.254" x2="1.27" y2="-0.254" width="0.1524" layer="21"/>
-<wire x1="0.762" y1="0.254" x2="1.27" y2="0.254" width="0.1524" layer="21"/>
-<wire x1="-0.254" y1="-1.27" x2="-0.762" y2="-1.27" width="0.1524" layer="21"/>
-<wire x1="-0.254" y1="-0.762" x2="-0.762" y2="-0.762" width="0.1524" layer="21"/>
-<wire x1="-0.254" y1="-0.254" x2="-0.762" y2="-0.254" width="0.1524" layer="21"/>
-<wire x1="-0.254" y1="0.254" x2="-0.762" y2="0.254" width="0.1524" layer="21"/>
-<text x="0.254" y="0.762" size="0.8128" layer="21" font="vector" ratio="12" rot="SR0" align="bottom-center">SI1145</text>
-<text x="-7.62" y="-5.08" size="0.8128" layer="21" font="vector" ratio="12" rot="SR0" align="bottom-center">VIN</text>
-<text x="-5.08" y="-5.08" size="0.8128" layer="21" font="vector" ratio="12" rot="SR0" align="bottom-center">GND</text>
-<text x="-2.54" y="-5.08" size="0.8128" layer="21" font="vector" ratio="12" rot="SR0" align="bottom-center">3v3</text>
-<text x="0" y="-5.08" size="0.8128" layer="21" font="vector" ratio="12" rot="SR0" align="bottom-center">IRQ</text>
-<text x="2.54" y="-5.08" size="0.8128" layer="21" font="vector" ratio="12" rot="SR0" align="bottom-center">LED</text>
-<text x="5.08" y="-5.08" size="0.8128" layer="21" font="vector" ratio="12" rot="SR0" align="bottom-center">SCL</text>
-<text x="7.62" y="-5.08" size="0.8128" layer="21" font="vector" ratio="12" rot="SR0" align="bottom-center">SDA</text>
+<package name="1X07-SMD-SHORT">
+<smd name="1" x="-7.62" y="3.175" dx="1.27" dy="3.81" layer="1"/>
+<smd name="2" x="-5.08" y="3.175" dx="1.27" dy="3.81" layer="1"/>
+<smd name="3" x="-2.54" y="3.175" dx="1.27" dy="3.81" layer="1"/>
+<smd name="4" x="0" y="3.175" dx="1.27" dy="3.81" layer="1"/>
+<smd name="5" x="2.54" y="3.175" dx="1.27" dy="3.81" layer="1"/>
+<smd name="6" x="5.08" y="3.175" dx="1.27" dy="3.81" layer="1"/>
+<smd name="7" x="7.62" y="3.175" dx="1.27" dy="3.81" layer="1"/>
+<text x="0" y="5.3975" size="1" layer="25" font="vector" ratio="12" align="bottom-center">&gt;NAME</text>
+<wire x1="0" y1="4.445" x2="0" y2="-8.636" width="0.762" layer="51"/>
+<wire x1="-8.636" y1="-3.048" x2="8.636" y2="-3.048" width="0.4" layer="21"/>
+<wire x1="-8.636" y1="-0.508" x2="8.636" y2="-0.508" width="0.4" layer="21"/>
+<wire x1="-8.636" y1="-3.048" x2="-8.636" y2="-0.508" width="0.4" layer="21"/>
+<wire x1="8.636" y1="-3.048" x2="8.636" y2="-0.508" width="0.4" layer="21"/>
+<wire x1="-2.54" y1="4.445" x2="-2.54" y2="-8.636" width="0.762" layer="51"/>
+<wire x1="-5.08" y1="4.445" x2="-5.08" y2="-8.636" width="0.762" layer="51"/>
+<wire x1="-7.62" y1="4.445" x2="-7.62" y2="-8.636" width="0.762" layer="51"/>
+<wire x1="2.54" y1="4.445" x2="2.54" y2="-8.636" width="0.762" layer="51"/>
+<wire x1="5.08" y1="4.445" x2="5.08" y2="-8.636" width="0.762" layer="51"/>
+<wire x1="7.62" y1="4.445" x2="7.62" y2="-8.636" width="0.762" layer="51"/>
+<wire x1="-8.636" y1="-3.048" x2="8.636" y2="-3.048" width="0.254" layer="51"/>
+<wire x1="-8.636" y1="-0.508" x2="8.636" y2="-0.508" width="0.254" layer="51"/>
+<wire x1="-8.636" y1="-3.048" x2="-8.636" y2="-0.508" width="0.254" layer="51"/>
+<wire x1="8.636" y1="-3.048" x2="8.636" y2="-0.508" width="0.254" layer="51"/>
 </package>
 <package name="DUMMY">
 <description>NOTHING HERE!!! For when you want a symbol with no package as an option against symbols with a package.</description>
@@ -349,6 +324,7 @@ UV i2c Sensor</text>
 </library>
 </libraries>
 <attributes>
+<attribute name="VERSION" value="v2.0"/>
 </attributes>
 <variantdefs>
 </variantdefs>
@@ -529,105 +505,79 @@ Please make sure your boards conform to these design rules.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="J1" library="A_butts" package="DF12-32-DP" value="DF12-32-DP" x="10" y="4.3" smashed="yes">
-<attribute name="PARTNO" value="AS-ITM-00015" x="29.05" y="0.49" size="1.778" layer="27" display="off"/>
-</element>
-<element name="IRQ-D2" library="A_butts" package="PAD-JUMPER-2-NO_YES_SILK" value="JUMPER-PAD-2-NOYES_SILK" x="8.6" y="11" smashed="yes" rot="R180">
-<attribute name="NAME" x="7.43" y="10.992" size="0.4064" layer="25" font="vector" ratio="12" rot="R90" align="bottom-center"/>
-</element>
-<element name="IRQ-D3" library="A_butts" package="PAD-JUMPER-2-NO_YES_SILK" value="JUMPER-PAD-2-NOYES_SILK" x="11.3" y="11" smashed="yes">
-<attribute name="NAME" x="12.5" y="11" size="0.4064" layer="25" font="vector" ratio="12" rot="R270" align="bottom-center"/>
-</element>
-<element name="BRK1" library="A_butts" package="ADAFRUIT-SI1145-BREAKOUT" value="ADAFRUIT-SI1145-BREAKOUT" x="10" y="8.7" rot="MR180"/>
-<element name="FRAME1" library="A_butts" package="DUMMY" value="FRAME-LETTERNO_PACKAGE" x="0" y="-0.5">
-<attribute name="VERSION" value="v2.0" x="0" y="-0.5" size="0.5" layer="27" ratio="12" display="off"/>
-<attribute name="DESIGNER" value="sean@yak.net" x="0" y="-0.5" size="0.5" layer="27" ratio="12" display="off"/>
+<element name="J1" library="A_butts" package="DF12-32-DP" value="AS-ITM-00015DF12-32-DP-REV" x="10" y="4.3" smashed="yes" rot="R180"/>
+<element name="BRK1" library="A_butts" package="1X07-SMD-SHORT" value="ADAFRUIT-SI1145-BREAKOUTSMD-RA" x="10" y="2.7" smashed="yes" rot="MR0"/>
+<element name="FRAME1" library="A_butts" package="DUMMY" value="FRAME-LETTERNO_PACKAGE" x="0" y="0">
+<attribute name="VERSION" value="v2.0" x="0" y="0" size="0.5" layer="27" ratio="12" display="off"/>
+<attribute name="DESIGNER" value="sean@yak.net" x="0" y="0" size="0.5" layer="27" ratio="12" display="off"/>
 </element>
 </elements>
 <signals>
 <signal name="VCC">
-<contactref element="J1" pad="6"/>
-<contactref element="BRK1" pad="VIN"/>
-<wire x1="2.38" y1="15.05" x2="2.38" y2="12.22" width="0.254" layer="1"/>
-<wire x1="2.38" y1="12.22" x2="7.25" y2="7.35" width="0.254" layer="1"/>
-<wire x1="7.25" y1="7.35" x2="7.25" y2="6.1001" width="0.254" layer="1"/>
+<contactref element="J1" pad="5"/>
+<contactref element="BRK1" pad="7"/>
+<wire x1="12.75" y1="6.1001" x2="12.75" y2="7.25" width="0.25" layer="1"/>
+<wire x1="12.75" y1="7.25" x2="12.2" y2="7.8" width="0.25" layer="1"/>
+<wire x1="12.2" y1="7.8" x2="2.3" y2="7.8" width="0.25" layer="1"/>
+<wire x1="2.3" y1="7.8" x2="1" y2="6.5" width="0.25" layer="1"/>
+<wire x1="2.38" y1="5.875" x2="1.625" y2="5.875" width="0.25" layer="16"/>
+<wire x1="1.625" y1="5.875" x2="1" y2="6.5" width="0.25" layer="16"/>
+<via x="1" y="6.5" extent="1-16" drill="0.3302"/>
 </signal>
 <signal name="GND">
-<contactref element="J1" pad="12"/>
-<contactref element="J1" pad="14"/>
-<polygon width="0.1524" layer="1">
-<vertex x="0" y="20"/>
-<vertex x="20" y="20"/>
-<vertex x="20" y="0"/>
-<vertex x="0" y="0"/>
+<contactref element="J1" pad="13"/>
+<contactref element="BRK1" pad="6"/>
+<contactref element="J1" pad="11"/>
+<via x="3.5" y="3" extent="1-16" drill="0.3302"/>
+<polygon width="0.1524" layer="16">
+<vertex x="20" y="7.6"/>
+<vertex x="20" y="1" curve="-90"/>
+<vertex x="19" y="0"/>
+<vertex x="1" y="0" curve="-90"/>
+<vertex x="0" y="1"/>
+<vertex x="0" y="7.6" curve="-90"/>
+<vertex x="1" y="8.6"/>
+<vertex x="19" y="8.6" curve="-90"/>
 </polygon>
-<contactref element="BRK1" pad="GND"/>
+<wire x1="10.5" y1="4.5" x2="6.3" y2="4.5" width="0.25" layer="1"/>
+<wire x1="6.3" y1="4.5" x2="5" y2="5.8" width="0.25" layer="1"/>
+<wire x1="5" y1="5.8" x2="4" y2="5.8" width="0.25" layer="1"/>
+<wire x1="4" y1="5.8" x2="3.5" y2="5.3" width="0.25" layer="1"/>
+<wire x1="3.5" y1="5.3" x2="3.5" y2="3" width="0.25" layer="1"/>
+<wire x1="11.25" y1="5.25" x2="10.75" y2="4.75" width="0.25" layer="1"/>
+<wire x1="10.75" y1="6.1001" x2="10.75" y2="4.75" width="0.25" layer="1"/>
+<wire x1="10.75" y1="4.75" x2="10.5" y2="4.5" width="0.25" layer="1"/>
+<wire x1="11.25" y1="6.1001" x2="10.75" y2="6.1001" width="0.25" layer="1"/>
+<wire x1="11.25" y1="5.25" x2="11.25" y2="6.1001" width="0.25" layer="1"/>
 </signal>
 <signal name="SCL">
-<contactref element="J1" pad="1"/>
-<contactref element="BRK1" pad="SCL"/>
-<wire x1="15.08" y1="15.05" x2="16.5" y2="13.63" width="0.254" layer="1"/>
-<wire x1="16.5" y1="13.63" x2="16.5" y2="3.4" width="0.254" layer="1"/>
-<wire x1="16.5" y1="3.4" x2="16" y2="2.9" width="0.254" layer="1"/>
-<wire x1="16" y1="2.9" x2="14.8" y2="2.9" width="0.254" layer="1"/>
-<wire x1="14.8" y1="2.9" x2="14" y2="3.7" width="0.254" layer="1"/>
-<wire x1="14" y1="3.7" x2="6.4" y2="3.7" width="0.254" layer="1"/>
-<wire x1="6.4" y1="3.7" x2="6.25" y2="3.55" width="0.254" layer="1"/>
-<wire x1="6.25" y1="3.55" x2="6.25" y2="2.4999" width="0.254" layer="1"/>
+<contactref element="J1" pad="2"/>
+<contactref element="BRK1" pad="2"/>
+<via x="13.75" y="1" extent="1-16" drill="0.3302"/>
+<wire x1="13.75" y1="2.4999" x2="13.75" y2="1" width="0.25" layer="1"/>
+<wire x1="13.75" y1="1" x2="15" y2="1" width="0.25" layer="16"/>
+<wire x1="15" y1="1" x2="16" y2="2" width="0.25" layer="16"/>
+<wire x1="16" y1="2" x2="16" y2="3.5" width="0.25" layer="16"/>
+<wire x1="16" y1="3.5" x2="15.08" y2="4.42" width="0.25" layer="16"/>
+<wire x1="15.08" y1="4.42" x2="15.08" y2="5.875" width="0.25" layer="16"/>
 </signal>
 <signal name="SDA">
-<contactref element="J1" pad="3"/>
-<contactref element="BRK1" pad="SDA"/>
-<wire x1="17.62" y1="15.05" x2="19.2" y2="13.47" width="0.254" layer="1"/>
-<wire x1="19.2" y1="13.47" x2="19.2" y2="1.3" width="0.254" layer="1"/>
-<wire x1="19.2" y1="1.3" x2="18.7" y2="0.8" width="0.254" layer="1"/>
-<wire x1="18.7" y1="0.8" x2="7.2" y2="0.8" width="0.254" layer="1"/>
-<wire x1="7.2" y1="0.8" x2="6.75" y2="1.35" width="0.254" layer="1"/>
-<wire x1="6.75" y1="1.35" x2="6.75" y2="2.4999" width="0.254" layer="1"/>
-</signal>
-<signal name="D2">
-<contactref element="J1" pad="28"/>
-<contactref element="IRQ-D2" pad="2"/>
-<wire x1="8.15" y1="11" x2="8.15" y2="9.45" width="0.254" layer="1"/>
-<wire x1="8.15" y1="9.45" x2="8.9" y2="8.7" width="0.254" layer="1"/>
-<wire x1="8.9" y1="8.7" x2="11.6" y2="8.7" width="0.254" layer="1"/>
-<wire x1="11.6" y1="8.7" x2="12.75" y2="7.55" width="0.254" layer="1"/>
-<wire x1="12.75" y1="7.55" x2="12.75" y2="6.1001" width="0.254" layer="1"/>
-</signal>
-<signal name="D3">
-<contactref element="J1" pad="30"/>
-<contactref element="IRQ-D3" pad="2"/>
-<wire x1="11.75" y1="11" x2="13.25" y2="9.5" width="0.254" layer="1"/>
-<wire x1="13.25" y1="9.5" x2="13.25" y2="6.1001" width="0.254" layer="1"/>
-</signal>
-<signal name="IRQ">
-<contactref element="IRQ-D2" pad="1"/>
-<contactref element="IRQ-D3" pad="1"/>
-<contactref element="BRK1" pad="IRQ"/>
-<wire x1="10" y1="15.05" x2="10.85" y2="14.2" width="0.254" layer="1"/>
-<wire x1="10.85" y1="14.2" x2="10.85" y2="11" width="0.254" layer="1"/>
-<wire x1="9.05" y1="11" x2="9.05" y2="14.1" width="0.254" layer="1"/>
-<wire x1="9.05" y1="14.1" x2="10" y2="15.05" width="0.254" layer="1"/>
-</signal>
-<signal name="GND1">
-<polygon width="0.1524" layer="16">
-<vertex x="18.73" y="0"/>
-<vertex x="1.27" y="0" curve="-90"/>
-<vertex x="0" y="1.27"/>
-<vertex x="0" y="18.73" curve="-90"/>
-<vertex x="1.27" y="20"/>
-<vertex x="18.73" y="20" curve="-90"/>
-<vertex x="20" y="18.73"/>
-<vertex x="20" y="1.27" curve="-90"/>
-</polygon>
+<contactref element="J1" pad="4"/>
+<contactref element="BRK1" pad="1"/>
+<wire x1="17.62" y1="5.875" x2="18.375" y2="5.875" width="0.25" layer="16"/>
+<wire x1="18.375" y1="5.875" x2="19" y2="6.5" width="0.25" layer="16"/>
+<via x="19" y="6.5" extent="1-16" drill="0.3302"/>
+<wire x1="19" y1="6.5" x2="15.8" y2="6.5" width="0.25" layer="1"/>
+<wire x1="15.8" y1="6.5" x2="13.25" y2="3.95" width="0.25" layer="1"/>
+<wire x1="13.25" y1="3.95" x2="13.25" y2="2.4999" width="0.25" layer="1"/>
 </signal>
 </signals>
+<errors>
+<approved hash="18,30,d2afd3c2a7dc1c38"/>
+<approved hash="18,30,e7cdccb0c651370f"/>
+<approved hash="18,30,71c34890a3ee8782"/>
+<approved hash="18,30,0201f9b02e069837"/>
+</errors>
 </board>
 </drawing>
-<compatibility>
-<note version="6.3" minversion="6.2.2" severity="warning">
-Since Version 6.2.2 text objects can contain more than one line,
-which will not be processed correctly with this version.
-</note>
-</compatibility>
 </eagle>
