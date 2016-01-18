@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="100" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="1" altunitdist="mil" altunit="mil"/>
+<grid distance="100" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="2" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="no" active="no"/>
@@ -50,6 +50,7 @@
 <layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
 <layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
 <layer number="57" name="tCAD" color="7" fill="1" visible="no" active="no"/>
+<layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
 <layer number="93" name="Pins" color="2" fill="1" visible="no" active="yes"/>
@@ -145,6 +146,13 @@
 <layer number="222" name="222bmp" color="23" fill="1" visible="yes" active="yes"/>
 <layer number="223" name="223bmp" color="24" fill="1" visible="yes" active="yes"/>
 <layer number="224" name="224bmp" color="25" fill="1" visible="yes" active="yes"/>
+<layer number="225" name="225bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="226" name="226bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="227" name="227bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="228" name="228bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="229" name="229bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="230" name="230bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="231" name="231bmp" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="248" name="Housing" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="249" name="Edge" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="250" name="Descript" color="3" fill="1" visible="yes" active="yes"/>
@@ -346,6 +354,14 @@
 <text x="5.08" y="-5.08" size="0.8128" layer="21" font="vector" ratio="12" rot="SR0" align="bottom-center">SCL</text>
 <text x="7.62" y="-5.08" size="0.8128" layer="21" font="vector" ratio="12" rot="SR0" align="bottom-center">SDA</text>
 </package>
+<package name="CREATIVE_COMMONS">
+<text x="-20.32" y="5.08" size="1.778" layer="51">Released under the Creative Commons Attribution Share-Alike 4.0 License</text>
+<text x="0" y="2.54" size="1.778" layer="51"> https://creativecommons.org/licenses/by-sa/4.0/</text>
+<text x="11.43" y="0" size="1.778" layer="51">Designed by:</text>
+</package>
+<package name="DUMMY">
+<description>NOTHING HERE!!! For when you want a symbol with no package as an option against symbols with a package.</description>
+</package>
 </packages>
 <symbols>
 <symbol name="DF12-32-F">
@@ -418,6 +434,51 @@
 <pin name="3V3_OUT" x="5.08" y="2.54" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="GND" x="5.08" y="5.08" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="VIN" x="5.08" y="7.62" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
+</symbol>
+<symbol name="LETTER_L">
+<wire x1="0" y1="185.42" x2="248.92" y2="185.42" width="0.4064" layer="94"/>
+<wire x1="248.92" y1="185.42" x2="248.92" y2="0" width="0.4064" layer="94"/>
+<wire x1="0" y1="185.42" x2="0" y2="0" width="0.4064" layer="94"/>
+<wire x1="0" y1="0" x2="248.92" y2="0" width="0.4064" layer="94"/>
+</symbol>
+<symbol name="DOCFIELD">
+<wire x1="0" y1="12.7" x2="15.24" y2="12.7" width="0.254" layer="94"/>
+<wire x1="15.24" y1="12.7" x2="53.34" y2="12.7" width="0.254" layer="94"/>
+<wire x1="96.52" y1="22.86" x2="66.04" y2="22.86" width="0.254" layer="94"/>
+<wire x1="66.04" y1="22.86" x2="53.34" y2="22.86" width="0.254" layer="94"/>
+<wire x1="0" y1="12.7" x2="0" y2="17.78" width="0.254" layer="94"/>
+<wire x1="0" y1="17.78" x2="53.34" y2="17.78" width="0.254" layer="94"/>
+<wire x1="0" y1="17.78" x2="0" y2="22.86" width="0.254" layer="94"/>
+<wire x1="96.52" y1="22.86" x2="96.52" y2="17.78" width="0.254" layer="94"/>
+<wire x1="53.34" y1="17.78" x2="53.34" y2="12.7" width="0.254" layer="94"/>
+<wire x1="53.34" y1="12.7" x2="66.04" y2="12.7" width="0.254" layer="94"/>
+<wire x1="66.04" y1="12.7" x2="96.52" y2="12.7" width="0.254" layer="94"/>
+<wire x1="53.34" y1="22.86" x2="53.34" y2="17.78" width="0.254" layer="94"/>
+<wire x1="53.34" y1="22.86" x2="0" y2="22.86" width="0.254" layer="94"/>
+<wire x1="53.34" y1="17.78" x2="96.52" y2="17.78" width="0.254" layer="94"/>
+<wire x1="96.52" y1="17.78" x2="96.52" y2="12.7" width="0.254" layer="94"/>
+<wire x1="0" y1="22.86" x2="0" y2="27.94" width="0.254" layer="94"/>
+<wire x1="0" y1="27.94" x2="15.24" y2="27.94" width="0.254" layer="94"/>
+<wire x1="15.24" y1="27.94" x2="96.52" y2="27.94" width="0.254" layer="94"/>
+<wire x1="96.52" y1="27.94" x2="96.52" y2="22.86" width="0.254" layer="94"/>
+<text x="1.27" y="15.24" size="2.54" layer="94" font="vector" ratio="12" align="center-left">Date</text>
+<text x="16.51" y="15.24" size="2.54" layer="94" font="vector" align="center-left">&gt;LAST_DATE_TIME</text>
+<text x="54.61" y="15.24" size="2.54" layer="94" font="vector" ratio="12" align="center-left">Sheet</text>
+<text x="67.31" y="15.24" size="2.54" layer="94" font="vector" align="center-left">&gt;SHEET</text>
+<text x="54.61" y="20.32" size="2.54" layer="94" font="vector" ratio="12" align="center-left">Rev</text>
+<text x="1.524" y="25.4" size="2.54" layer="94" font="vector" ratio="12" align="center-left">Title</text>
+<text x="16.51" y="25.4" size="2.54" layer="94" font="vector" align="center-left">&gt;DRAWING_NAME</text>
+<text x="46.99" y="8.89" size="1.9304" layer="94" font="vector" align="bottom-center">Released under the Creative Commons</text>
+<text x="46.99" y="5.08" size="1.9304" layer="94" font="vector" align="bottom-center">Attribution Share-Alike 4.0 License</text>
+<text x="46.99" y="1.27" size="1.9304" layer="94" font="vector" align="bottom-center"> https://creativecommons.org/licenses/by-sa/4.0/</text>
+<text x="1.27" y="20.32" size="2.54" layer="94" font="vector" ratio="12" align="center-left">Author</text>
+<text x="16.51" y="20.32" size="2.54" layer="94" font="vector" align="center-left">&gt;DESIGNER</text>
+<text x="67.31" y="20.32" size="2.54" layer="94" font="vector" align="center-left">&gt;VERSION</text>
+<wire x1="0" y1="0" x2="96.52" y2="0" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="0" y2="12.7" width="0.254" layer="94"/>
+<wire x1="96.52" y1="12.7" x2="96.52" y2="0" width="0.254" layer="94"/>
+<wire x1="15.24" y1="12.7" x2="15.24" y2="27.94" width="0.254" layer="94"/>
+<wire x1="66.04" y1="22.86" x2="66.04" y2="12.7" width="0.254" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -526,6 +587,32 @@
 </device>
 </devices>
 </deviceset>
+<deviceset name="FRAME-LETTER" prefix="FRAME">
+<description>&lt;b&gt;Schematic Frame&lt;/b&gt;&lt;p&gt;
+Standard 8.5x11 US Letter frame</description>
+<gates>
+<gate name="G$1" symbol="LETTER_L" x="0" y="0"/>
+<gate name="V" symbol="DOCFIELD" x="152.4" y="0" addlevel="must"/>
+</gates>
+<devices>
+<device name="" package="CREATIVE_COMMONS">
+<technologies>
+<technology name="">
+<attribute name="DESIGNER" value="NAME" constant="no"/>
+<attribute name="VERSION" value="v01" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="NO_PACKAGE" package="DUMMY">
+<technologies>
+<technology name="">
+<attribute name="DESIGNER" value="Nobody" constant="no"/>
+<attribute name="VERSION" value="v01" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
 </devicesets>
 </library>
 <library name="SparkFun-Aesthetics">
@@ -598,24 +685,30 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <part name="IRQ-D2" library="A_butts" deviceset="JUMPER-PAD-2-NO" device="YES_SILK"/>
 <part name="IRQ-D3" library="A_butts" deviceset="JUMPER-PAD-2-NO" device="YES_SILK"/>
 <part name="BRK1" library="A_butts" deviceset="ADAFRUIT-SI1145-BREAKOUT" device=""/>
+<part name="FRAME1" library="A_butts" deviceset="FRAME-LETTER" device="NO_PACKAGE">
+<attribute name="DESIGNER" value="sean@yak.net"/>
+<attribute name="VERSION" value="v1.0"/>
+</part>
 </parts>
 <sheets>
 <sheet>
 <plain>
 </plain>
 <instances>
-<instance part="J1" gate="G$1" x="91.44" y="50.8"/>
-<instance part="SUPPLY1" gate="G$1" x="58.42" y="66.04"/>
-<instance part="SUPPLY2" gate="G$1" x="119.38" y="73.66"/>
-<instance part="GND1" gate="1" x="76.2" y="60.96"/>
-<instance part="GND2" gate="1" x="119.38" y="20.32"/>
-<instance part="IRQ-D2" gate="G$1" x="58.42" y="53.34" smashed="yes" rot="R270">
-<attribute name="NAME" x="60.96" y="55.88" size="1.778" layer="95" rot="R270"/>
+<instance part="J1" gate="G$1" x="134.62" y="99.06"/>
+<instance part="SUPPLY1" gate="G$1" x="101.6" y="114.3"/>
+<instance part="SUPPLY2" gate="G$1" x="162.56" y="121.92"/>
+<instance part="GND1" gate="1" x="119.38" y="109.22"/>
+<instance part="GND2" gate="1" x="162.56" y="68.58"/>
+<instance part="IRQ-D2" gate="G$1" x="101.6" y="101.6" smashed="yes" rot="R270">
+<attribute name="NAME" x="104.14" y="104.14" size="1.778" layer="95" rot="R270"/>
 </instance>
-<instance part="IRQ-D3" gate="G$1" x="68.58" y="53.34" smashed="yes" rot="R270">
-<attribute name="NAME" x="71.12" y="55.88" size="1.778" layer="95" rot="R270"/>
+<instance part="IRQ-D3" gate="G$1" x="111.76" y="101.6" smashed="yes" rot="R270">
+<attribute name="NAME" x="114.3" y="104.14" size="1.778" layer="95" rot="R270"/>
 </instance>
-<instance part="BRK1" gate="G$1" x="38.1" y="58.42"/>
+<instance part="BRK1" gate="G$1" x="81.28" y="106.68"/>
+<instance part="FRAME1" gate="G$1" x="0" y="0"/>
+<instance part="FRAME1" gate="V" x="152.4" y="0"/>
 </instances>
 <busses>
 </busses>
@@ -623,13 +716,13 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <net name="VCC" class="0">
 <segment>
 <pinref part="J1" gate="G$1" pin="6"/>
-<wire x1="104.14" y1="63.5" x2="119.38" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="119.38" y1="63.5" x2="119.38" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="147.32" y1="111.76" x2="162.56" y2="111.76" width="0.1524" layer="91"/>
+<wire x1="162.56" y1="111.76" x2="162.56" y2="121.92" width="0.1524" layer="91"/>
 <pinref part="SUPPLY2" gate="G$1" pin="VCC"/>
 </segment>
 <segment>
-<wire x1="58.42" y1="66.04" x2="43.18" y2="66.04" width="0.1524" layer="91"/>
-<label x="50.8" y="66.04" size="1.778" layer="95"/>
+<wire x1="101.6" y1="114.3" x2="86.36" y2="114.3" width="0.1524" layer="91"/>
+<label x="93.98" y="114.3" size="1.778" layer="95"/>
 <pinref part="SUPPLY1" gate="G$1" pin="VCC"/>
 <pinref part="BRK1" gate="G$1" pin="VIN"/>
 </segment>
@@ -638,76 +731,76 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <segment>
 <pinref part="J1" gate="G$1" pin="12"/>
 <pinref part="J1" gate="G$1" pin="14"/>
-<wire x1="104.14" y1="55.88" x2="104.14" y2="53.34" width="0.1524" layer="91"/>
-<wire x1="104.14" y1="53.34" x2="119.38" y2="53.34" width="0.1524" layer="91"/>
-<junction x="104.14" y="53.34"/>
-<wire x1="119.38" y1="53.34" x2="119.38" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="147.32" y1="104.14" x2="147.32" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="147.32" y1="101.6" x2="162.56" y2="101.6" width="0.1524" layer="91"/>
+<junction x="147.32" y="101.6"/>
+<wire x1="162.56" y1="101.6" x2="162.56" y2="71.12" width="0.1524" layer="91"/>
 <pinref part="GND2" gate="1" pin="GND"/>
 </segment>
 <segment>
-<wire x1="76.2" y1="63.5" x2="43.18" y2="63.5" width="0.1524" layer="91"/>
-<label x="50.8" y="63.5" size="1.778" layer="95"/>
+<wire x1="119.38" y1="111.76" x2="86.36" y2="111.76" width="0.1524" layer="91"/>
+<label x="93.98" y="111.76" size="1.778" layer="95"/>
 <pinref part="GND1" gate="1" pin="GND"/>
 <pinref part="BRK1" gate="G$1" pin="GND"/>
 </segment>
 </net>
 <net name="IRQ" class="0">
 <segment>
-<wire x1="58.42" y1="58.42" x2="43.18" y2="58.42" width="0.1524" layer="91"/>
-<label x="50.8" y="58.42" size="1.778" layer="95"/>
+<wire x1="101.6" y1="106.68" x2="86.36" y2="106.68" width="0.1524" layer="91"/>
+<label x="93.98" y="106.68" size="1.778" layer="95"/>
 <pinref part="IRQ-D2" gate="G$1" pin="1"/>
 <pinref part="IRQ-D3" gate="G$1" pin="1"/>
-<wire x1="58.42" y1="58.42" x2="68.58" y2="58.42" width="0.1524" layer="91"/>
-<junction x="58.42" y="58.42"/>
+<wire x1="101.6" y1="106.68" x2="111.76" y2="106.68" width="0.1524" layer="91"/>
+<junction x="101.6" y="106.68"/>
 <pinref part="BRK1" gate="G$1" pin="IRQ"/>
 </segment>
 </net>
 <net name="SCL" class="0">
 <segment>
 <pinref part="J1" gate="G$1" pin="1"/>
-<wire x1="81.28" y1="68.58" x2="71.12" y2="68.58" width="0.1524" layer="91"/>
-<label x="71.12" y="68.58" size="1.778" layer="95"/>
+<wire x1="124.46" y1="116.84" x2="114.3" y2="116.84" width="0.1524" layer="91"/>
+<label x="114.3" y="116.84" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="55.88" y1="53.34" x2="43.18" y2="53.34" width="0.1524" layer="91"/>
-<label x="50.8" y="53.34" size="1.778" layer="95"/>
+<wire x1="99.06" y1="101.6" x2="86.36" y2="101.6" width="0.1524" layer="91"/>
+<label x="93.98" y="101.6" size="1.778" layer="95"/>
 <pinref part="BRK1" gate="G$1" pin="SCL"/>
 </segment>
 </net>
 <net name="SDA" class="0">
 <segment>
 <pinref part="J1" gate="G$1" pin="3"/>
-<wire x1="81.28" y1="66.04" x2="71.12" y2="66.04" width="0.1524" layer="91"/>
-<label x="71.12" y="66.04" size="1.778" layer="95"/>
+<wire x1="124.46" y1="114.3" x2="114.3" y2="114.3" width="0.1524" layer="91"/>
+<label x="114.3" y="114.3" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="55.88" y1="50.8" x2="43.18" y2="50.8" width="0.1524" layer="91"/>
-<label x="50.8" y="50.8" size="1.778" layer="95"/>
+<wire x1="99.06" y1="99.06" x2="86.36" y2="99.06" width="0.1524" layer="91"/>
+<label x="93.98" y="99.06" size="1.778" layer="95"/>
 <pinref part="BRK1" gate="G$1" pin="SDA"/>
 </segment>
 </net>
 <net name="D2" class="0">
 <segment>
 <pinref part="J1" gate="G$1" pin="28"/>
-<wire x1="104.14" y1="35.56" x2="111.76" y2="35.56" width="0.1524" layer="91"/>
-<label x="106.68" y="35.56" size="1.778" layer="95"/>
+<wire x1="147.32" y1="83.82" x2="154.94" y2="83.82" width="0.1524" layer="91"/>
+<label x="149.86" y="83.82" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="IRQ-D2" gate="G$1" pin="2"/>
-<wire x1="58.42" y1="48.26" x2="63.5" y2="48.26" width="0.1524" layer="91"/>
-<label x="60.96" y="48.26" size="1.778" layer="95"/>
+<wire x1="101.6" y1="96.52" x2="106.68" y2="96.52" width="0.1524" layer="91"/>
+<label x="104.14" y="96.52" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="D3" class="0">
 <segment>
 <pinref part="J1" gate="G$1" pin="30"/>
-<wire x1="104.14" y1="33.02" x2="111.76" y2="33.02" width="0.1524" layer="91"/>
-<label x="106.68" y="33.02" size="1.778" layer="95"/>
+<wire x1="147.32" y1="81.28" x2="154.94" y2="81.28" width="0.1524" layer="91"/>
+<label x="149.86" y="81.28" size="1.778" layer="95"/>
 </segment>
 <segment>
 <pinref part="IRQ-D3" gate="G$1" pin="2"/>
-<wire x1="68.58" y1="48.26" x2="73.66" y2="48.26" width="0.1524" layer="91"/>
-<label x="71.12" y="48.26" size="1.778" layer="95"/>
+<wire x1="111.76" y1="96.52" x2="116.84" y2="96.52" width="0.1524" layer="91"/>
+<label x="114.3" y="96.52" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
