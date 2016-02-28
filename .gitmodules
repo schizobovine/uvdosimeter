@@ -16,3 +16,6 @@
 [submodule "firmware/feather/lib/EnableInterrupt"]
 	path = firmware/feather/lib/EnableInterrupt
 	url = git@github.com:GreyGnome/EnableInterrupt.git
+[submodule "firmware/tinyduino/lib/Arduino-Makefile"]
+	path = firmware/tinyduino/lib/Arduino-Makefile
+	url = git@github.com:sudar/Arduino-Makefile.git
