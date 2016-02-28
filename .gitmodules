@@ -19,3 +19,6 @@
 [submodule "firmware/tinyduino/lib/Arduino-Makefile"]
 	path = firmware/tinyduino/lib/Arduino-Makefile
 	url = git@github.com:sudar/Arduino-Makefile.git
+[submodule "firmware/tinyduino/lib/Adafruit_SI1145"]
+	path = firmware/tinyduino/lib/Adafruit_SI1145
+	url = git@github.com:adafruit/Adafruit_SI1145_Library.git
