@@ -47,7 +47,6 @@
 // LED14     H   L
 //
 
-
 const uint8_t NUM_LEDS = 12;
 
 const uint8_t LED_LOW[NUM_LEDS] = {
