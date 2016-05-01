@@ -52,3 +52,6 @@
 [submodule "firmware/dirty2/lib/MicroView"]
 	path = firmware/dirty2/lib/MicroView
 	url = git@github.com:sparkfun/SparkFun_Micro_OLED_Arduino_Library.git
+[submodule "firmware/featherwing/lib/MicroView"]
+	path = firmware/featherwing/lib/MicroView
+	url = git@github.com:sparkfun/SparkFun_Micro_OLED_Arduino_Library.git
