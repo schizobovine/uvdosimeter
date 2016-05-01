@@ -22,3 +22,33 @@
 [submodule "firmware/tinyduino/lib/Adafruit_SI1145"]
 	path = firmware/tinyduino/lib/Adafruit_SI1145
 	url = git@github.com:adafruit/Adafruit_SI1145_Library.git
+[submodule "firmware/featherwing/lib/Adafruit_SI1145"]
+	path = firmware/featherwing/lib/Adafruit_SI1145
+	url = git@github.com:adafruit/Adafruit_SI1145_Library.git
+[submodule "firmware/featherwing/lib/Arduino-Makefile"]
+	path = firmware/featherwing/lib/Arduino-Makefile
+	url = git@github.com:sudar/Arduino-Makefile.git
+[submodule "firmware/featherwing/lib/Bounce2"]
+	path = firmware/featherwing/lib/Bounce2
+	url = git@github.com:schizobovine/Bounce2.git
+[submodule "firmware/featherwing/lib/EnableInterrupt"]
+	path = firmware/featherwing/lib/EnableInterrupt
+	url = git@github.com:GreyGnome/EnableInterrupt.git
+[submodule "firmware/dirty2/lib/Adafruit_SD"]
+	path = firmware/dirty2/lib/Adafruit_SD
+	url = git@github.com:adafruit/SD.git
+[submodule "firmware/dirty2/lib/Adafruit_SI1145"]
+	path = firmware/dirty2/lib/Adafruit_SI1145
+	url = git@github.com:adafruit/Adafruit_SI1145_Library.git
+[submodule "firmware/dirty2/lib/RTClib"]
+	path = firmware/dirty2/lib/RTClib
+	url = git@github.com:schizobovine/RTClib.git
+[submodule "firmware/dirty2/lib/Time"]
+	path = firmware/dirty2/lib/Time
+	url = git@github.com:schizobovine/Time.git
+[submodule "firmware/dirty2/lib/Timezone"]
+	path = firmware/dirty2/lib/Timezone
+	url = git@github.com:schizobovine/Timezone.git
+[submodule "firmware/dirty2/lib/MicroView"]
+	path = firmware/dirty2/lib/MicroView
+	url = git@github.com:sparkfun/SparkFun_Micro_OLED_Arduino_Library.git
