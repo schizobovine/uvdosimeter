@@ -83,10 +83,10 @@ void setup() {
   display.clear(PAGE); // Since it's apparently not all all
   textNormal();
   display.setFontType(1);
-  display.setCursor(24, 0);
+  display.setCursor(22, 8);
   display.print(F("UV"));
   display.setFontType(0);
-  display.setCursor(8, 16);
+  display.setCursor(8, 22);
   display.print(F("Dosimeter"));
   display.display();
 
@@ -98,7 +98,7 @@ void setup() {
   butt.attach(BUTT_PIN, INPUT_PULLUP, BUTT_INTERVAL);
   enableInterrupt(BUTT_PIN, irqButt, CHANGE);
 
-  // More delay for supersitition?
+  // More delay for supersitition? Also show title screen.
   delay(500);
 
 }
@@ -122,26 +122,26 @@ void loop() {
   //
 
   display.setFontType(0);
-  display.setCursor(0, 6);
+  display.setCursor(0, 4);
   display.print(F("UV"));
   display.setFontType(1);
-  display.setCursor(18, 0);
-  display.print(uv, 2);
+  display.setCursor(20, 0);
+  display.print(uv, 1);
 
   display.setFontType(0);
-  display.setCursor(0, 16);
+  display.setCursor(0, 12);
   display.print(F("Vis"));
-  display.setCursor(18, 16);
+  display.setCursor(20, 12);
   display.print(vs, 0);
 
-  display.setCursor(0, 24);
+  display.setCursor(0, 20);
   display.print(F("IR"));
-  display.setCursor(18, 24);
+  display.setCursor(20, 20);
   display.print(ir, 0);
 
-  display.setCursor(0, 32);
+  display.setCursor(0, 28);
   display.print(F("Bat"));
-  display.setCursor(18, 32);
+  display.setCursor(20, 28);
   display.print(getBattVoltage(), 2);
   display.print(F("V"));
 
