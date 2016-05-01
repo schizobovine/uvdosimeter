@@ -20,7 +20,6 @@
 #include <SPI.h>
 #include <Wire.h>
 #include <SFE_MicroOLED.h>
-#include <Adafruit_SSD1306.h>
 #include <Adafruit_SI1145.h>
 #include <EnableInterrupt.h>
 #include <Bounce2.h>
@@ -54,11 +53,11 @@ float getBattVoltage() {
 }
 
 void textNormal() {
-  display.setTextColor(WHITE);
+  display.setColor(WHITE);
 }
 
 void textInvert() {
-  display.setTextColor(BLACK, WHITE);
+  display.setColor(BLACK);
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -80,13 +79,12 @@ void setup() {
 
   // Init display
   display.begin();
-  display.clearDisplay();
-  display.setTextColor(DISP_COLOR);
-  display.setTextWrap(false);
-  display.setTextSize(1);
+  display.clear(ALL);
+  textNormal();
+  display.setFontType(1);
   display.setCursor(24, 0);
   display.print(F("UV"));
-  display.setTextSize(0);
+  display.setFontType(0);
   display.setCursor(8, 16);
   display.print(F("Dosimeter"));
   display.display();
@@ -116,20 +114,20 @@ void loop() {
 
   //butt.update();
 
-  display.clearDisplay();
+  display.clear(PAGE);
 
   //
   // Refresh sensor readings
   //
 
-  display.setTextSize(0);
+  display.setFontType(0);
   display.setCursor(0, 8);
   display.print(F("UV"));
-  display.setTextSize(1);
+  display.setFontType(1);
   display.setCursor(16, 0);
   display.print(uv, 2);
 
-  display.setTextSize(0);
+  display.setFontType(0);
   display.setCursor(0, 16);
   display.print(F("Vis"));
   display.setCursor(16, 16);
