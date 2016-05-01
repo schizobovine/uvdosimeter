@@ -80,6 +80,7 @@ void setup() {
   // Init display
   display.begin();
   display.clear(ALL);
+  display.clear(PAGE); // Since it's apparently not all all
   textNormal();
   display.setFontType(1);
   display.setCursor(24, 0);
@@ -121,26 +122,26 @@ void loop() {
   //
 
   display.setFontType(0);
-  display.setCursor(0, 8);
+  display.setCursor(0, 6);
   display.print(F("UV"));
   display.setFontType(1);
-  display.setCursor(16, 0);
+  display.setCursor(18, 0);
   display.print(uv, 2);
 
   display.setFontType(0);
   display.setCursor(0, 16);
   display.print(F("Vis"));
-  display.setCursor(16, 16);
+  display.setCursor(18, 16);
   display.print(vs, 0);
 
   display.setCursor(0, 24);
   display.print(F("IR"));
-  display.setCursor(16, 24);
+  display.setCursor(18, 24);
   display.print(ir, 0);
 
   display.setCursor(0, 32);
   display.print(F("Bat"));
-  display.setCursor(16, 32);
+  display.setCursor(18, 32);
   display.print(getBattVoltage(), 2);
   display.print(F("V"));
 
