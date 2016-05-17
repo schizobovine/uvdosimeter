@@ -55,3 +55,21 @@
 [submodule "firmware/featherwing/lib/MicroView"]
 	path = firmware/featherwing/lib/MicroView
 	url = git@github.com:sparkfun/SparkFun_Micro_OLED_Arduino_Library.git
+[submodule "firmware/feather-analog/lib/Adafruit_GFX"]
+	path = firmware/feather-analog/lib/Adafruit_GFX
+	url = git@github.com:adafruit/Adafruit-GFX-Library.git
+[submodule "firmware/feather-analog/lib/Adafruit_SI1145"]
+	path = firmware/feather-analog/lib/Adafruit_SI1145
+	url = git@github.com:adafruit/Adafruit_SI1145_Library.git
+[submodule "firmware/feather-analog/lib/Adafruit_SSD1306"]
+	path = firmware/feather-analog/lib/Adafruit_SSD1306
+	url = git@github.com:schizobovine/Adafruit_SSD1306.git
+[submodule "firmware/feather-analog/lib/Arduino-Makefile"]
+	path = firmware/feather-analog/lib/Arduino-Makefile
+	url = git@github.com:sudar/Arduino-Makefile.git
+[submodule "firmware/feather-analog/lib/Bounce2"]
+	path = firmware/feather-analog/lib/Bounce2
+	url = git@github.com:schizobovine/Bounce2.git
+[submodule "firmware/feather-analog/lib/EnableInterrupt"]
+	path = firmware/feather-analog/lib/EnableInterrupt
+	url = git@github.com:GreyGnome/EnableInterrupt.git
