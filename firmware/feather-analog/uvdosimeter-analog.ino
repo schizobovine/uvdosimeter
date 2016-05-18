@@ -55,7 +55,7 @@ float getBattVoltage() {
 }
 
 float getUVIndex() {
-  int16_t reading = analogRead(UV_SENSOR);
+  float reading = analogRead(UV_SENSOR) / 1024.0 * 3.3;
   return reading / 0.1;
 }
 
