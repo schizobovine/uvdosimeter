@@ -20,28 +20,37 @@
 #include <Adafruit_SI1145.h>
 #include <Adafruit_VEML6070.h>
 #include <VEML6075.h>
-#include <SD.h>
 #include <RTClib.h>
 #include <DS3231.h>
 
-//#define USE_BLE 0
+#define USE_BLE
+//#define USE_SD
 
 #ifdef USE_BLE
+
 #include <Adafruit_BLE.h>
 #include <Adafruit_BluefruitLE_SPI.h>
-#endif
-
-#define LOG_FILENAME "uv_raw.log"
-
-const uint8_t SD_CS     = 10;
-const uint8_t LOGMODE   = O_WRITE | O_CREAT | O_APPEND;
 
 const uint8_t BLE_CS    = 8;
 const uint8_t BLE_IRQ   = 7;
 const uint8_t BLE_RST   = 4;
 
+Adafruit_BluefruitLE_SPI modem(BLE_CS, BLE_IRQ, BLE_RST);
+#endif
+
+#ifdef USE_SD
+
+#include <SD.h>
+
+const uint8_t SD_CS     = 10;
+const uint8_t LOGMODE   = O_WRITE | O_CREAT | O_APPEND;
+#define LOG_FILENAME "uv_raw.log"
+
+File logfile;
+uint8_t lastmin = 0;
+#endif
+
 const uint8_t GUVA12_PIN = A2;
-const uint8_t ML8511_PIN = A1;
 
 Adafruit_SI1145 si1145 = Adafruit_SI1145();
 Adafruit_VEML6070 veml6070 = Adafruit_VEML6070();
@@ -49,11 +58,7 @@ VEML6075 veml6075 = VEML6075();
 RTC_DS3231 rtc = RTC_DS3231();
 
 #ifdef USE_BLE
-Adafruit_BluefruitLE_SPI modem(BLE_CS, BLE_IRQ, BLE_RST);
 #endif
-
-File logfile;
-uint8_t lastmin = 0;
 
 uint16_t guva_reading;
 
@@ -96,24 +101,24 @@ void logData(DateTime *dt, Stream *out) {
   if (out) {
 
     timestamp(dt, out);
-    out->print(F(","));
+    out->print((","));
 
-    out->print(guva_reading, 1);                      out->print(F(","));
-    out->print(getUVIndexGUVA12(guva_reading), 1);    out->print(F(","));
+    out->print(guva_reading, 1);                      out->print((","));
+    out->print(getUVIndexGUVA12(guva_reading), 1);    out->print((","));
 
-    out->print(si1145_index, 1);                      out->print(F(","));
-    out->print(si1145_vis);                           out->print(F(","));
-    out->print(si1145_ir);                            out->print(F(","));
+    out->print(si1145_index, 1);                      out->print((","));
+    out->print(si1145_vis);                           out->print((","));
+    out->print(si1145_ir);                            out->print((","));
 
-    out->print(veml6070_raw_uv);                      out->print(F(","));
-    out->print(veml6070_index, 1);                    out->print(F(","));
+    out->print(veml6070_raw_uv);                      out->print((","));
+    out->print(veml6070_index, 1);                    out->print((","));
 
-    out->print(veml6075_raw_uva);                     out->print(F(","));
-    out->print(veml6075_raw_uvb);                     out->print(F(","));
-    out->print(veml6075_raw_dark);                    out->print(F(","));
-    out->print(veml6075_raw_vis);                     out->print(F(","));
-    out->print(veml6075_raw_ir);                      out->print(F(","));
-    out->print(veml6075_index, 1);                    out->print(F(","));
+    out->print(veml6075_raw_uva);                     out->print((","));
+    out->print(veml6075_raw_uvb);                     out->print((","));
+    out->print(veml6075_raw_dark);                    out->print((","));
+    out->print(veml6075_raw_vis);                     out->print((","));
+    out->print(veml6075_raw_ir);                      out->print((","));
+    out->print(veml6075_index, 1);                    out->print((","));
 
     out->println();
 
@@ -126,7 +131,7 @@ void setup() {
   while (!Serial)
     ;
   Serial.begin(115200);
-  Serial.println(F("Hello, UV dosimeter tester starting..."));
+  Serial.println(("Hello, UV dosimeter tester starting..."));
 
   // Setup GUVA-S12D & ML8511
   pinMode(GUVA12_PIN, INPUT);
@@ -147,12 +152,14 @@ void setup() {
   veml6075.begin();
 
   // Open logfile
+#ifdef USE_SD
   pinMode(SD_CS, OUTPUT);
   if (!SD.begin(SD_CS)) {
     error("MicroSD not found!");
   } else if (!(logfile = SD.open(F(LOG_FILENAME), LOGMODE))) {
     error("Could not open " LOG_FILENAME "!");
   }
+#endif
 
 #ifdef USE_BLE
   // Setup BLE modem
@@ -204,16 +211,20 @@ void loop() {
 #ifdef USE_BLE
   // Display results over BLE
   if (modem.isConnected()) {
+    modem.setMode(BLUEFRUIT_MODE_DATA);
     logData(&now, &modem);
+    modem.flush();
   }
 #endif
 
+#ifdef USE_SD
   // Write out data to SD card every minute or so
   if (now.minute() != lastmin) {
     lastmin = now.minute();
     logData(&now, &logfile);
     logfile.flush();
   }
+#endif
 
   // Log to file every minute
   delay(1000);
