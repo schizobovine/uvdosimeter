@@ -24,8 +24,12 @@
 #include <RTClib.h>
 #include <DS3231.h>
 
-//#include <Adafruit_BLE.h>
-//#include <Adafruit_BluefruitLE_SPI.h>
+//#define USE_BLE 0
+
+#ifdef USE_BLE
+#include <Adafruit_BLE.h>
+#include <Adafruit_BluefruitLE_SPI.h>
+#endif
 
 #define LOG_FILENAME "uv_raw.log"
 
@@ -44,13 +48,14 @@ Adafruit_VEML6070 veml6070 = Adafruit_VEML6070();
 VEML6075 veml6075 = VEML6075();
 RTC_DS3231 rtc = RTC_DS3231();
 
-//Adafruit_BluefruitLE_SPI modem(BLE_CS, BLE_IRQ, BLE_RST);
+#ifdef USE_BLE
+Adafruit_BluefruitLE_SPI modem(BLE_CS, BLE_IRQ, BLE_RST);
+#endif
 
 File logfile;
 uint8_t lastmin = 0;
 
 uint16_t guva_reading;
-uint16_t ml8511_reading;
 
 float si1145_index = 0.0;
 uint16_t si1145_vis = 0;
@@ -79,10 +84,6 @@ float getUVIndexGUVA12(uint16_t uv_reading) {
   return (uv_reading / 1024.0 * 5.0) / 0.1;
 }
 
-float getUVIndexML8511(uint16_t uv_reading) {
-  return (uv_reading / 1024.0 * 5.0) / 0.1;
-}
-
 void timestamp(DateTime *dt, Stream *f) {
   if (dt && f) {
     String s;
@@ -99,9 +100,6 @@ void logData(DateTime *dt, Stream *out) {
 
     out->print(guva_reading, 1);                      out->print(F(","));
     out->print(getUVIndexGUVA12(guva_reading), 1);    out->print(F(","));
-
-    out->print(ml8511_reading, 1);                    out->print(F(","));
-    out->print(getUVIndexML8511(ml8511_reading), 1);  out->print(F(","));
 
     out->print(si1145_index, 1);                      out->print(F(","));
     out->print(si1145_vis);                           out->print(F(","));
@@ -132,7 +130,6 @@ void setup() {
 
   // Setup GUVA-S12D & ML8511
   pinMode(GUVA12_PIN, INPUT);
-  pinMode(ML8511_PIN, INPUT);
 
   // Initialize i2c bus
   Wire.begin();
@@ -157,10 +154,12 @@ void setup() {
     error("Could not open " LOG_FILENAME "!");
   }
 
+#ifdef USE_BLE
   // Setup BLE modem
-  //if (!modem.begin(false)) {
-  //  error("Starting BLE modem failed!");
-  //}
+  if (!modem.begin(false)) {
+    error("Starting BLE modem failed!");
+  }
+#endif
 
 }
 
@@ -168,7 +167,6 @@ void getRawData() {
 
   // Read analog sensors
   guva_reading = analogRead(GUVA12_PIN);
-  ml8511_reading = analogRead(ML8511_PIN);
 
   // Read Si1145
   si1145_index = si1145.readUV();
@@ -194,36 +192,30 @@ void getRawData() {
 
 void loop() {
 
-  //
   // Get current time
-  //
   DateTime now = rtc.now();
 
-  //
   // Refresh data
-  //
   getRawData();
 
-  //
-  // Display results over serial and ble
-  //
+  // Display results over serial
   logData(&now, &Serial);
-  //if (modem.isConnected()) {
-  //  logData(&now, &modem);
-  //}
 
-  //
+#ifdef USE_BLE
+  // Display results over BLE
+  if (modem.isConnected()) {
+    logData(&now, &modem);
+  }
+#endif
+
   // Write out data to SD card every minute or so
-  //
   if (now.minute() != lastmin) {
     lastmin = now.minute();
     logData(&now, &logfile);
     logfile.flush();
   }
 
-  //
   // Log to file every minute
-  //
   delay(1000);
 
 }
